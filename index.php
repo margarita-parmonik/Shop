@@ -10,7 +10,7 @@
 <body>
     <div class='container'>
         <h1>Product list</h1>
-        <a href="/addproduct.php"><input type="button" value="ADD" /></a>
+        <a href="/addproduct"><input type="button" value="ADD" /></a>
 
         <form action="/php/delete_items.php" method="POST">
             <button name="button">MASS DELETE</button>

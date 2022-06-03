@@ -8,15 +8,13 @@ class listItems
     public function setList()
     {
         try {
-            $conn = new PDO('mysql:/bd/shopkk.sql', 'root', 'admin');
-            //$conn = new PDO("oo");
-        } catch (PDOException $e) {
+            $conn = new PDO('mysql:host=localhost', 'root', 'admin');
+        } catch(Exception $e){
             echo 'Connection failed: ' . $e->getMessage();
         }
-
+        
         $sql = 'SELECT * FROM shop.items';
         $result = $conn->query($sql);
-
         while ($row = $result->fetch()) {
             switch ($row['type']) {
                 case 'disc':
@@ -39,7 +37,7 @@ class listItems
         echo "<div class='container'>";
         for ($i = 0; $i < count($this->items); $i++) {
             echo "<div class='tile'>";
-            echo "<input type='checkbox' name='checkItems[]' value=" . $this->items[$i]->id;
+            echo "<input type='checkbox' id='.delete-checkbox' class='delete-checkbox' name='checkItems[]' value=" . $this->items[$i]->id . " ";
             //echo "<input type='checkbox' name='checkItems[]' id=" . $this->items[$i]->id;
             echo  "<br />";
             $this->items[$i]->printAboutItem();

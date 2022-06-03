@@ -1,6 +1,6 @@
 <?php
-if(isset($_POST["course"]))
+if(isset($_POST["productType"]))
 {
-    $course = $_POST["course"];
+    $course = $_POST["productType"];
     echo $course;
 }
