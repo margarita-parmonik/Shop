@@ -20,8 +20,4 @@ class Item
     {
         return $this->id;
     }
-
-    public function __get($property)
-    {
-    }
 }

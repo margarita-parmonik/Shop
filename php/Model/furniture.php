@@ -23,7 +23,7 @@ class Furniture extends Item
         }
         
         $sql = "INSERT INTO shop.items (`sku`, `name`, `price`, `type`, `value`) VALUES ('". $this->sku ."', '". $this->name ."', '". $this->price ."', 'furniture', '". $this->value ."')";
-
+        
         $conn->query($sql);
     }
 }
