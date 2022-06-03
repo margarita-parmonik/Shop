@@ -1,6 +1,9 @@
 <?php
+include_once 'Model/book.php';
+include_once 'Model/furniture.php';
+include_once 'Model/disc.php'; 
+
 if (isset($_POST["save"])) {
-    include 'Model/item.php';
 
     if (isset($_POST["productType"]) && $_POST["productType"] != "") {
         $productType = $_POST["productType"];
@@ -8,7 +11,7 @@ if (isset($_POST["save"])) {
         $name = $_POST["name"];
         $price = $_POST["price"];
 
-        echo $sku;
+        echo $productType;
         switch ($productType) {
             case 'furniture':
                 $height = $_POST["height"];
@@ -18,18 +21,16 @@ if (isset($_POST["save"])) {
                 $item = new Furniture(0, $sku, $name, $price, $height . 'x' . $width . 'x' . $length);
                 $item->save_in_bd();
                 break;
-            case 'disk':
+            case 'disc':
                 $size = $_POST["size"];
                 
                 $item = new Disc(0, $sku, $name, $price, $size);
-            
                 $item->save_in_bd();
                 break;
             case 'book':
                 $weight = $_POST["weight"];
                 $item = new Book(0, $sku, $name, $price, $weight);
                 
-                print_r($item);
                 $item->save_in_bd();
                 break;
         }

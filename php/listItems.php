@@ -1,5 +1,7 @@
 <?php
-include 'php/Model/item.php';
+include_once 'php/Model/book.php';
+include_once 'php/Model/furniture.php';
+include_once 'php/Model/disc.php';
 
 class listItems
 {
@@ -37,7 +39,7 @@ class listItems
         echo "<div class='container'>";
         for ($i = 0; $i < count($this->items); $i++) {
             echo "<div class='tile'>";
-            echo "<input type='checkbox' id='.delete-checkbox' class='delete-checkbox' name='checkItems[]' value=" . $this->items[$i]->id . " ";
+            echo "<input type='checkbox' id='.delete-checkbox' class='delete-checkbox' name='checkItems[]' value=" . $this->items[$i]->getId() . " ";
             //echo "<input type='checkbox' name='checkItems[]' id=" . $this->items[$i]->id;
             echo  "<br />";
             $this->items[$i]->printAboutItem();

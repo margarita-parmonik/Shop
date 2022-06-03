@@ -1,0 +1,15 @@
+{
+    "name": "nikita/htdocs",
+    "autoload": {
+        "psr-4": {
+            "Nikita\\Htdocs\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Nikita Sugak",
+            "email": "sugak.nik@gmail.com"
+        }
+    ],
+    "require": {}
+}
