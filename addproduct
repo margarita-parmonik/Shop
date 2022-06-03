@@ -11,50 +11,44 @@
 <body>
     <div class='container'>
         <h1>Product add</h1>
-        <button name="button">Save</button>
-        <form action="/php/delete_items.php" method="POST">
-            <button name="button">Cansel</button>
-        </form>
+        <form action="/php/save.php" method="POST" id="product_form">
+            <button name="save" >Save</button>
+            <button name="cansel" >Cansel</button>
         <hr>
-        <form method="POST" id ="product_form">
-            <p>SKY<input type="text" id ="sku" name="sku" /></p>
-            <p>Name<input type="text" id ="name" name="name" /></p>
-            <p>Price ($)<input type="text" id ="price"name="price" /></p>
-            Type Switcher <select id="productType" size="1">
-                <option value="dvd">DVD</option>
+            <p>SKY<input type="text" id="sku" name="sku" /></p>
+            <p>Name<input type="text" id="name" name="name" /></p>
+            <p>Price ($)<input type="text" id="price" name="price" /></p>
+            Type Switcher <select name="productType" id="productType"size="1">
+                <option value="">Type Switcher</option>
+                <option value="disc">DVD</option>
                 <option value="book">Book</option>
                 <option value="furniture">Furniture</option>
             </select>
-        <div class="attributes" id="attributesItem">
-        </div>
-    </form>
+            <div class="attributes" id="attributesItem">
+            </div>
+        </form>
 
-    <script>
-        $(function() {
-            $('#productType').on('change', function() {
-                 var value = $(this).val();
-                switch(value){
-                case 'dvd':
+        <script>
+            $(function () {
+                $('#productType').on('change', function () {
+                    var value = $(this).val();
                     $('#attributesItem').text("");
-                    $('#attributesItem').append("Size (MB)<input type='text' id='size'>");
-                break;
-                case 'book':
-                    $('#attributesItem').text("");
-                    $('#attributesItem').append("Weight (KG)<input type='text' id='weight'>");
-                break;
-                case 'furniture':
-                    $('#attributesItem').text("");
-                    $('#attributesItem').append("Height (CM)<input type='text' id='height'><br />");
-                    $('#attributesItem').append("Width (CM)<input type='text' id='width'><br />");
-                    $('#attributesItem').append("Lenght (CM)<input type='text' id='length'><br />");
-                break;
-                
-                } 
-
-                //$('#attributesItem').text(<input type='text' id='size'>);
+                    switch (value) {
+                        case 'disc':
+                            $('#attributesItem').append("Size (MB)<input type='text' name='size' id='size'>");
+                            break;
+                        case 'book':
+                            $('#attributesItem').append("Weight (KG)<input type='text' name='weight' id='weight'>");
+                            break;
+                        case 'furniture':
+                            $('#attributesItem').append("Height (CM)<input type='text' name='height' id='height'><br />");
+                            $('#attributesItem').append("Width (CM)<input type='text' name='width' id='width'><br />");
+                            $('#attributesItem').append("Lenght (CM)<input type='text' name='length' id='length'><br />");
+                            break;
+                    }
+                });
             });
-        });
-    </script>
+        </script>
     </div>
 </body>
 
