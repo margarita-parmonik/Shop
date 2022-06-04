@@ -1,7 +1,7 @@
 <?php
 include_once 'Model/book.php';
 include_once 'Model/furniture.php';
-include_once 'Model/disc.php';
+include_once 'Model/disc.php';//
 
 if (isset($_POST["save"])) {
 
