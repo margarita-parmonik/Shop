@@ -3,7 +3,7 @@ include_once 'php/Model/book.php';
 include_once 'php/Model/furniture.php';
 include_once 'php/Model/disc.php';
 
-class listItems
+class ListItems
 {
     private $items = [];
 
