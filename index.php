@@ -23,7 +23,7 @@
     include_once "php/listItems.php";
     require_once "vendor/autoload.php";
     $list = new listItems();
-    $list->drowListItems();
+    $list->drowListItems(); //
     ?>
 </body>
 
