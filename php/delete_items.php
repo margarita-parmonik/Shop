@@ -1,4 +1,4 @@
-<?php
+<?php//
 if (isset($_POST["checkItems"])) {
     $idCheckItems = $_POST["checkItems"];
     for ($i = 0; $i < count($idCheckItems); $i++) {
