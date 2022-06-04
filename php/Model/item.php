@@ -6,7 +6,10 @@ Class model item
 class Item
 {
     private $id;
-    protected $sku, $name, $price, $value;
+    protected $sku;
+    protected $name;
+    protected $price;
+    protected $value;
 
     function __construct($id, $sku, $name, $price, $value)
     {
