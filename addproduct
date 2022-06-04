@@ -28,7 +28,7 @@
             </div>
         </form>
 
-        <script>
+        <script>//
             $(function () {
                 $('#productType').on('change', function () {
                     var value = $(this).val();
